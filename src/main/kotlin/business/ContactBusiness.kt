@@ -39,4 +39,12 @@ class ContactBusiness {
         return ContactRepository.getList()
     }
 
+    fun getContactCountDescription(): String {
+        val list = getList()
+        return when {
+            list.isEmpty() -> "0 contatos"
+            list.size == 1 -> "1 contato"
+            else -> "${list.size} contatos"
+        }
+    }
 }
