@@ -12,7 +12,7 @@ class ContactRepository {
         }
 
         fun delete(contact: ContactEntity) {
-            //contactList.remove(contact);
+            //contactList.remove(contact); // problema devido a posição na memória dos objetos não são as mesmas.
 
             var index = 0
             for (item in contactList.withIndex()) {
