@@ -1,0 +1,29 @@
+package business
+
+class ContactBusiness {
+
+    fun validate(name: String, phone: String) {
+        if (name == "") {
+            throw Exception("Nome é obrigatório!")
+        }
+
+        if (phone == "") {
+            throw Exception("Telefone é obrigatório!")
+        }
+    }
+
+    fun validadeDelete(name: String, phone: String) {
+        if (name == "" || phone == "") {
+            throw Exception("É necessário selecionar um contato para remover.")
+        }
+    }
+
+    fun save(name: String, phone: String) {
+        validate(name, phone)
+    }
+
+    fun delete(name: String, phone: String) {
+        validadeDelete(name, phone)
+    }
+
+}
